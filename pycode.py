@@ -3,7 +3,7 @@ DAYS_OF_WEEK = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturda
 
 # classes 
 class Exercise:
-    def __init__(self, name, sets, reps, weight=None):
+    def __init__(self, name, sets, reps, weight=None) :
         self.name = name
         self.sets = sets
         self.reps = reps
