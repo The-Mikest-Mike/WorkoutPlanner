@@ -1,25 +1,25 @@
-# constants
+# Constants
 DAYS_OF_WEEK = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
 
-# classes 
+# Classes
 class Exercise:
-    def __init__(self, name, sets, reps, weight=None) :
+    def __init__(self, name, sets, reps, weight=None):
         self.name = name
         self.sets = sets
         self.reps = reps
         self.weight = weight
 
-# exercise categories
+# Exercise categories
 EXERCISE_CATEGORIES = {
-    "legs": ["Squats/step front lunges/walking lunges alternate", "Calf Rises"],
-    "core": ["Hanging Leg Rises", "half wipers", "plank 4x10secs"],
-    "chest": ["Incline dumbell press", "Close grip flat bench", "5 slow push ups", "straight push-ups 10 x 4"],
-    "back": ["Bent Over Row", "Deadlift"],
-    "shoulder": ["Dumbbell shoulder press seated", "Lateral Raises", "Medicine Ball Front Raises 4x15"],
-    "tricep": ["Overhead tricep extension", "one hand on bench overhead tricep extension", "Mule Kick"],
-    "bicep": ["Dumbbell curl standing or seated on decline bench supinated", "Pull-ups neutral grip 4x6"],
-    "forearm": ["Forearm", "Forearm Reverse wrist curls", "Front wrist lifts 4x20"],
-    "extra": ["Walk to the river", "Train to Failure: Forearm twists 15lb", "Joggling to the river", "30 min static bike lvl 1", "2km run - 23min", "Yoga"]
+    "legs": ["squats/step front lunges/walking lunges alternate", "calf rises"],
+    "core": ["hanging leg rises", "half wipers", "plank"],
+    "chest": ["incline dumbbell press", "close grip flat bench", "slow push ups", "straight push-ups"],
+    "back": ["bent over row", "deadlift"],
+    "shoulder": ["dumbbell shoulder press seated", "lateral raises", "medicine ball front raises"],
+    "tricep": ["overhead tricep extension", "one hand on bench overhead tricep extension", "mule kick"],
+    "bicep": ["dumbbell curl standing or seated on decline bench supinated", "pull-ups neutral grip"],
+    "forearm": ["forearm", "forearm reverse wrist curls", "front wrist lifts"],
+    "extra": ["walk to the river", "train to failure: forearm twists", "joggling to the river", "static bike lvl 1", "2km run - 23min", "yoga"]
 }
 
 class WorkoutDay:
@@ -27,7 +27,7 @@ class WorkoutDay:
         self.day_of_week = day_of_week
         self.exercises = exercises
 
-# functions
+# Functions
 def print_workout(workout_day):
     print(f"{workout_day.day_of_week.capitalize()}:")
     for category, exercise_list in EXERCISE_CATEGORIES.items():
@@ -39,10 +39,8 @@ def print_workout(workout_day):
                 else:
                     print(f"        {exercise.name} {exercise.sets}x{exercise.reps}")
 
-
-# creating instances of WorkoutDay for each day of the week and add exercises accordingly
-
-# monday
+# Creating instances of WorkoutDay for each day of the week and adding exercises accordingly
+# Monday
 monday_exercises = [
     Exercise("Squats/step front lunges/walking lunges alternate", 4, 10, "30lbs"),
     Exercise("Calf Rises", 1, 86, "kg"),
@@ -50,7 +48,7 @@ monday_exercises = [
 ]
 monday = WorkoutDay("monday", monday_exercises)
 
-# tuesday
+# Tuesday
 tuesday_exercises = [
     Exercise("Incline dumbbell press", 4, 10, "40lb"),
     Exercise("Close grip flat bench", 4, 10, "35lb"),
@@ -103,11 +101,11 @@ sunday_exercises = [
 ]
 sunday = WorkoutDay("sunday", sunday_exercises)
 
-# main program
+# Main program
 if __name__ == "__main__":
     # Creating a list of all the WorkoutDay instances
     workout_days = [monday, tuesday, wednesday, thursday, friday, saturday, sunday]
-    
+
     # You can print the workout for each day of the week using the print_workout function.
     for day in DAYS_OF_WEEK:
         for workout_day in workout_days:
